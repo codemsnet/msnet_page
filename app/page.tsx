@@ -1,12 +1,18 @@
+import Hero from "@/components/Hero";
 import Nav from "@/components/Nav";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Nav/>
-        <section className="xl:padding-l wide:padding-r padding-b"></section>
+    <div className="min-h-screen bg-gray-50 dark:bg-neutral-900 font-sans text-gray-900 dark:text-gray-100">
+      {/* Nav is fixed (handles its own positioning) */}
+      <Nav />
+
+      <main className="w-full pt-20 lg:pt-24">
+        <div className="mx-auto px-4 lg:px-2">
+          <Hero />
+          <section className="py-10"></section>
+        </div>
       </main>
     </div>
-  );
+  );git
 }
