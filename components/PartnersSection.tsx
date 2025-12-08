@@ -14,7 +14,7 @@ const logos = [
 
 export default function PartnersSection() {
   return (
-    <section className="py-20">
+    <section className="py-20 bg-linear-to-b from-[var(--msnet-sky)]/12 via-white to-white">
       <div className="w-full mx-auto px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: -10 }}
@@ -23,19 +23,20 @@ export default function PartnersSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-100 text-slate-600 text-sm font-semibold">
-            <span className="h-2 w-2 rounded-full bg-emerald-500" /> Ils nous font confiance
+          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--msnet-sky)]/15 text-[var(--msnet-navy)] text-sm font-semibold border border-[var(--msnet-sky)]/25">
+            <span className="h-2 w-2 rounded-full bg-[var(--screen-blue)]" /> Ils nous font
+            confiance
           </span>
-          <h2 className="mt-4 text-3xl md:text-4xl font-extrabold text-slate-900">
+          <h2 className="mt-4 text-3xl md:text-4xl font-extrabold text-[var(--msnet-navy)]">
             Partenaires & institutions de référence
           </h2>
-          <p className="mt-4 text-slate-600 max-w-2xl mx-auto">
-            Un écosystème d&apos;acteurs publics et privés qui misent sur notre expertise pour accélérer
-            leur transformation digitale.
+          <p className="mt-4 text-[var(--text-main)] max-w-2xl mx-auto">
+            Un écosystème d&apos;acteurs publics et privés qui misent sur notre expertise pour
+            accélérer leur transformation digitale.
           </p>
         </motion.div>
 
-        <div className="relative mt-10 overflow-hidden rounded-3xl bg-white/90 backdrop-blur border border-slate-100 shadow-lg">
+        <div className="relative mt-10 overflow-hidden rounded-4xl bg-white/95 backdrop-blur border border-[rgba(115,151,186,0.18)] shadow-[0_24px_70px_rgba(11,40,66,0.09)]">
           <div className="pointer-events-none absolute left-0 top-0 h-full w-32 bg-gradient-to-r from-white to-transparent z-10" />
           <div className="pointer-events-none absolute right-0 top-0 h-full w-32 bg-gradient-to-l from-white to-transparent z-10" />
 
@@ -46,16 +47,18 @@ export default function PartnersSection() {
             transition={{ duration: 0.6 }}
             className="flex"
           >
-            {/* Première ligne qui défile */}
-            <div className="flex gap-28">
-              <div className="flex gap-28 py-12 animate-marquee">
+            <div className="flex items-center">
+              <div className="flex gap-24 py-12 marquee-track">
                 {[...logos, ...logos].map((logo, idx) => (
-                  <div key={`first-${logo.name}-${idx}`} className="shrink-0 flex items-center">
+                  <div
+                    key={`first-${logo.name}-${idx}`}
+                    className="shrink-0 flex items-center justify-center h-28 w-52 sm:w-64"
+                  >
                     <Image
                       src={logo.src}
                       alt={logo.name}
-                      width={320}
-                      height={128}
+                      width={360}
+                      height={160}
                       onMouseEnter={(e) => {
                         const tooltip = document.createElement('div');
                         tooltip.textContent = logo.name;
@@ -80,22 +83,24 @@ export default function PartnersSection() {
                       onMouseLeave={() => {
                         document.querySelectorAll('.partner-tooltip').forEach((el) => el.remove());
                       }}
-                      className="h-24 w-auto object-contain drop-shadow-md"
+                      className="max-h-24 w-auto object-contain drop-shadow-md"
                       priority={idx < logos.length}
                     />
                   </div>
                 ))}
               </div>
 
-              {/* Deuxième ligne identique pour l'effet de boucle */}
-              <div className="flex gap-28 py-12 animate-marquee">
+              <div className="flex gap-24 py-12 marquee-track marquee-track--alt">
                 {[...logos, ...logos].map((logo, idx) => (
-                  <div key={`second-${logo.name}-${idx}`} className="shrink-0 flex items-center">
+                  <div
+                    key={`second-${logo.name}-${idx}`}
+                    className="shrink-0 flex items-center justify-center h-28 w-52 sm:w-64"
+                  >
                     <Image
                       src={logo.src}
                       alt={logo.name}
-                      width={320}
-                      height={128}
+                      width={360}
+                      height={160}
                       onMouseEnter={(e) => {
                         const tooltip = document.createElement('div');
                         tooltip.textContent = logo.name;
@@ -120,7 +125,7 @@ export default function PartnersSection() {
                       onMouseLeave={() => {
                         document.querySelectorAll('.partner-tooltip').forEach((el) => el.remove());
                       }}
-                      className="h-24 w-auto object-contain drop-shadow-md"
+                      className="max-h-24 w-auto object-contain drop-shadow-md"
                     />
                   </div>
                 ))}
@@ -136,13 +141,16 @@ export default function PartnersSection() {
             transform: translateX(0);
           }
           100% {
-            transform: translateX(-100%);
+            transform: translateX(-50%);
           }
         }
-        .animate-marquee {
-          animation: marquee 30s linear infinite;
-          width: max-content;
+        .marquee-track {
+          animation: marquee 24s linear infinite;
+          min-width: max-content;
           flex-shrink: 0;
+        }
+        .marquee-track--alt {
+          animation-delay: -12s;
         }
       `}</style>
     </section>

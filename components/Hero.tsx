@@ -55,27 +55,30 @@ const Hero = () => {
   useEffect(() => setMounted(true), []);
 
   return (
-    <section id="home" className="w-full py-24 bg-linear-to-b from-blue-50/60 to-transparent">
-      <div className="max-w-7xl mx-auto px-2 lg:px-2 flex flex-col lg:flex-row items-center gap-12">
+    <section
+      id="home"
+      className="w-full py-24 bg-linear-to-b from-[var(--msnet-sky)]/10 via-white to-white"
+    >
+      <div className="max-w-7xl mx-auto px-4 lg:px-2 flex flex-col lg:flex-row items-center gap-12">
         {/* Left column: content */}
         <div className="lg:w-2/5 space-y-6">
-          <p className="text-sm font-semibold text-orange-400 uppercase tracking-wide">
-            Ecosystème intégré
+          <p className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-[var(--msnet-navy)] bg-white px-3 py-1 rounded-full shadow-sm border border-slate-100">
+            <span className="h-2 w-2 rounded-full bg-[var(--screen-blue)]" /> Ecosystème intégré
           </p>
           <h1
-            className={`text-4xl lg:text-5xl font-extrabold leading-tight font-serif ${
+            className={`text-4xl lg:text-[54px] font-extrabold leading-tight font-sans text-[var(--msnet-navy)] ${
               mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
             } transition-all duration-700`}
           >
-            <span className="block text-transparent bg-clip-text bg-linear-to-r from-sky-600 to-sky-400">
+            <span className="block text-transparent bg-clip-text bg-linear-to-r from-[var(--msnet-sky)] to-[var(--screen-blue)]">
               MSNET, ELIKIA et SCREEN
             </span>
-            <span className="block text-slate-700 mt-2 text-lg lg:text-xl">
+            <span className="block text-[var(--msnet-navy)] mt-3 text-xl lg:text-2xl">
               — un écosystème pour la modernisation digitale
             </span>
           </h1>
 
-          <p className="text-lg text-slate-700 max-w-xl">
+          <p className="text-lg text-[var(--text-main)] max-w-xl leading-relaxed">
             MSNET, ELIKIA et SCREEN constituent un écosystème intégré de technologies,
             d&apos;ingénierie digitale, de formation et de conseil stratégique. Ensemble, nous
             accompagnons États, grandes entreprises et institutions publiques dans la modernisation
@@ -83,7 +86,10 @@ const Hero = () => {
           </p>
 
           <div className="flex items-center gap-4 mt-6">
-            <button type="button" className="btn-primary">
+            <button
+              type="button"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-slate-900 text-white rounded-xl font-semibold hover:bg-slate-800 transition-colors duration-300 shadow-md"
+            >
               <span>Nous contacter</span>
               <svg
                 className="btn-arrow"
@@ -110,7 +116,10 @@ const Hero = () => {
                 />
               </svg>
             </button>
-            <Link href="#more" className="text-sm text-slate-600 hover:underline">
+            <Link
+              href="#more"
+              className="text-sm text-[var(--msnet-navy)] hover:text-[var(--screen-blue)] transition-colors"
+            >
               Voir nos solutions
             </Link>
           </div>
@@ -119,14 +128,14 @@ const Hero = () => {
         {/* Right column: large visual, overlapped */}
         <div className="lg:w-3/5 relative flex items-center justify-center">
           <div
-            className={`absolute -left-8 -top-8 w-[550px] h-[515px] rounded-3xl bg-white/20 dark:bg-neutral-900/70 shadow-2xl border border-blue-50 ${
+            className={`absolute -left-8 -top-8 w-[550px] h-[515px] rounded-3xl bg-white/40 dark:bg-neutral-900/70 shadow-2xl border border-[var(--msnet-sky)]/30 ${
               mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
             } transition-all duration-700`}
           />
 
           <div className="relative z-10 w-[740px] h-[520px] -translate-y-6 lg:-translate-y-12 flex items-center justify-center">
             <div
-              className={`w-full h-full rounded-3xl overflow-hidden bg-white shadow-2xl border border-blue-50 flex items-center ${
+              className={`w-full h-full rounded-3xl overflow-hidden bg-white shadow-2xl border border-[var(--msnet-sky)]/30 flex items-center ${
                 isTransitioning ? 'opacity-80 scale-40' : 'opacity-100 scale-100'
               } transition-all duration-200`}
             >
@@ -144,12 +153,14 @@ const Hero = () => {
               </div>
 
               {/* Info area - fixed size so card never changes */}
-              <div className="w-1/2 p-4 flex flex-col justify-center gap-6">
-                <h3 className="text-2xl font-semibold text-sky-700">{selected.name}</h3>
-                <p className="mt-3 text-lg text-slate-700 grow overflow-hidden">{selected.short}</p>
+              <div className="w-1/2 p-7 flex flex-col justify-center gap-5 bg-transparent">
+                <h3 className="text-3xl font-semibold text-[var(--msnet-navy)]">{selected.name}</h3>
+                <p className="mt-1 text-lg text-[var(--text-main)] grow overflow-hidden leading-relaxed">
+                  {selected.short}
+                </p>
 
                 {selected.details && (
-                  <ul className="mt-3 text-lg text-slate-500 list-disc list-inside space-y-1 overflow-auto">
+                  <ul className="mt-1 text-base text-slate-700 list-disc list-inside space-y-1.5 overflow-auto">
                     {selected.details.map((d) => (
                       <li key={d}>{d}</li>
                     ))}
@@ -175,7 +186,9 @@ const Hero = () => {
                 }}
                 aria-pressed={selected.id === e.id}
                 className={`w-20 h-20 rounded-lg overflow-hidden flex items-center justify-center bg-white shadow-lg border transition-transform focus:outline-none ${
-                  selected.id === e.id ? 'scale-105 ring-4 ring-sky-300' : 'hover:scale-105'
+                  selected.id === e.id
+                    ? 'scale-105 ring-4 ring-[var(--screen-blue)]/60'
+                    : 'hover:scale-105'
                 }`}
               >
                 <div className="w-full h-full flex items-center justify-center p-1">
@@ -192,6 +205,16 @@ const Hero = () => {
           </div>
         </div>
       </div>
+
+      <style jsx global>{`
+        :root {
+          --msnet-sky: #7397ba;
+          --msnet-navy: #0b2842;
+          --elikia-brown: #b5914a;
+          --screen-blue: #24a1d6;
+          --text-main: #374151;
+        }
+      `}</style>
     </section>
   );
 };
