@@ -36,7 +36,7 @@ export default function TestimonialSection() {
   ];
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20 bg-linear-to-b from-[var(--msnet-sky)]/12 via-white to-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <motion.header
           initial={{ opacity: 0, y: -8 }}
@@ -44,8 +44,13 @@ export default function TestimonialSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl font-extrabold text-slate-900">Ce que disent nos clients</h2>
-          <p className="mt-4 text-slate-600 max-w-2xl mx-auto">
+          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--msnet-sky)]/15 text-[var(--msnet-navy)] text-sm font-semibold border border-[var(--msnet-sky)]/25">
+            <span className="h-2 w-2 rounded-full bg-[var(--screen-blue)]" /> Témoignages
+          </span>
+          <h2 className="mt-4 text-4xl font-extrabold text-[var(--msnet-navy)]">
+            Ce que disent nos clients
+          </h2>
+          <p className="mt-4 text-[var(--text-main)] max-w-2xl mx-auto">
             Découvrez des retours authentiques de nos clients sur leurs expériences de
             transformation digitale.
           </p>
