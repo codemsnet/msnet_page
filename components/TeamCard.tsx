@@ -29,22 +29,15 @@ export default function TeamCard({ name, role, bio, photo, socials = [] }: Props
     <motion.article
       whileHover={{ y: -4, scale: 1.01 }}
       transition={{ type: 'spring', stiffness: 260, damping: 22 }}
-      className="bg-white rounded-2xl shadow-lg border border-slate-100 p-6 flex flex-col items-center text-center"
+      className="relative overflow-hidden bg-white/96 rounded-3xl shadow-[0_18px_50px_rgba(11,40,66,0.08)] border border-[rgba(115,151,186,0.18)] p-7 flex flex-col items-center text-center backdrop-blur-sm"
     >
-      <div className="relative w-28 h-28">
-        <Image
-          src={photo}
-          alt={name}
-          fill
-          sizes="112px"
-          className="rounded-full object-cover shadow-md"
-          priority
-        />
+      <div className="relative w-32 h-32 rounded-full border-4 border-[var(--msnet-sky)]/35 shadow-[0_10px_30px_rgba(11,40,66,0.12)] overflow-hidden">
+        <Image src={photo} alt={name} fill sizes="128px" className="object-cover" priority />
       </div>
 
-      <h3 className="mt-4 text-lg font-semibold text-slate-900">{name}</h3>
-      <p className="text-sm text-emerald-600 font-semibold">{role}</p>
-      {bio && <p className="mt-3 text-sm text-slate-600 leading-relaxed">{bio}</p>}
+      <h3 className="mt-4 text-xl font-semibold text-[var(--msnet-navy)]">{name}</h3>
+      <p className="text-sm text-[var(--screen-blue)] font-semibold">{role}</p>
+      {bio && <p className="mt-3 text-sm text-[var(--text-main)] leading-relaxed">{bio}</p>}
 
       {socials.length > 0 && (
         <div className="mt-4 flex items-center justify-center gap-3">
@@ -54,7 +47,7 @@ export default function TeamCard({ name, role, bio, photo, socials = [] }: Props
               href={s.url}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-slate-900 text-white hover:bg-emerald-500 transition-colors"
+              className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[var(--msnet-navy)] text-white border border-[rgba(115,151,186,0.25)] hover:bg-[var(--screen-blue)] transition-colors"
               aria-label={`${s.platform} profile of ${name}`}
             >
               {iconMap[s.platform]}
@@ -62,6 +55,8 @@ export default function TeamCard({ name, role, bio, photo, socials = [] }: Props
           ))}
         </div>
       )}
+
+      <span className="pointer-events-none absolute inset-x-0 bottom-0 h-1 bg-linear-to-r from-[var(--msnet-sky)] via-[var(--screen-blue)] to-transparent opacity-70" />
     </motion.article>
   );
 }

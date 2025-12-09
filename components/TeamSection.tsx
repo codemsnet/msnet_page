@@ -47,7 +47,7 @@ const team: {
 
 export default function TeamSection() {
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20 bg-linear-to-b from-[var(--msnet-sky)]/12 via-white to-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: -8 }}
@@ -56,13 +56,13 @@ export default function TeamSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-100 text-slate-600 text-sm font-semibold">
-            <span className="h-2 w-2 rounded-full bg-emerald-500" /> Notre équipe
+          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--msnet-sky)]/15 text-[var(--msnet-navy)] text-sm font-semibold border border-[var(--msnet-sky)]/25">
+            <span className="h-2 w-2 rounded-full bg-[var(--screen-blue)]" /> Notre équipe
           </span>
-          <h2 className="mt-4 text-3xl md:text-4xl font-extrabold text-slate-900">
+          <h2 className="mt-4 text-3xl md:text-4xl font-extrabold text-[var(--msnet-navy)]">
             Les femmes et hommes derrière MSNET | ELIKIA | SCREEN
           </h2>
-          <p className="mt-4 text-slate-600 max-w-3xl mx-auto">
+          <p className="mt-4 text-[var(--text-main)] max-w-3xl mx-auto">
             Une équipe pluridisciplinaire qui mène vos projets avec fierté, exigence et créativité —
             du conseil à l&apos;architecture, jusqu&apos;au design et à la réussite utilisateur.
           </p>

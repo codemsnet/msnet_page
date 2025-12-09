@@ -1,12 +1,12 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { FiBookOpen, FiBriefcase, FiCreditCard, FiHeart, FiShield } from 'react-icons/fi';
+import Image from 'next/image';
 
 const sectors = [
   {
     title: 'Gouvernement',
-    icon: <FiShield className="h-5 w-5" aria-hidden />,
+    icon: '/assets/icons/card_icons/gouv_data.png',
     bullets: [
       'Dématérialisation & e-gouvernement',
       'Suivi budgétaire, archivage légal',
@@ -15,7 +15,7 @@ const sectors = [
   },
   {
     title: 'Éducation',
-    icon: <FiBookOpen className="h-5 w-5" aria-hidden />,
+    icon: '/assets/icons/card_icons/education.png',
     bullets: [
       'Cyber School & numérisation académies',
       'Portails étudiants, GED, e-signature',
@@ -24,7 +24,7 @@ const sectors = [
   },
   {
     title: 'Santé',
-    icon: <FiHeart className="h-5 w-5" aria-hidden />,
+    icon: '/assets/icons/card_icons/sante.png',
     bullets: [
       'e-Santé, Dossier médical partagé',
       'Pharma360 : stocks, ventes, dossier patient',
@@ -33,7 +33,7 @@ const sectors = [
   },
   {
     title: 'Secteur privé',
-    icon: <FiBriefcase className="h-5 w-5" aria-hidden />,
+    icon: '/assets/icons/card_icons/secteur_privee.png',
     bullets: [
       'ERP métiers, automatisation, API',
       'Cloud souverain & services managés',
@@ -42,7 +42,7 @@ const sectors = [
   },
   {
     title: 'Banques',
-    icon: <FiCreditCard className="h-5 w-5" aria-hidden />,
+    icon: '/assets/icons/card_icons/banque.png',
     bullets: [
       'Conformité BCEAO, archivage légal',
       'Docu360 bancaire, workflows sécurisés',
@@ -53,7 +53,7 @@ const sectors = [
 
 export default function SectorsSection() {
   return (
-    <section className="py-16">
+    <section className="py-20 bg-linear-to-b from-[var(--msnet-sky)]/12 via-white to-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: -8 }}
@@ -62,13 +62,13 @@ export default function SectorsSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-100 text-slate-600 text-sm font-semibold">
-            <span className="h-2 w-2 rounded-full bg-emerald-500" /> Offres sectorielles
+          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--msnet-sky)]/15 text-[var(--msnet-navy)] text-sm font-semibold border border-[var(--msnet-sky)]/25">
+            <span className="h-2 w-2 rounded-full bg-[var(--screen-blue)]" /> Offres sectorielles
           </span>
-          <h2 className="mt-4 text-3xl md:text-4xl font-extrabold text-slate-900">
+          <h2 className="mt-4 text-3xl md:text-4xl font-extrabold text-[var(--msnet-navy)]">
             Solutions verticales pour chaque secteur
           </h2>
-          <p className="mt-4 text-slate-600 max-w-3xl mx-auto">
+          <p className="mt-4 text-[var(--text-main)] max-w-3xl mx-auto">
             MSNET, ELIKIA et SCREEN couvrent les besoins clés des gouvernements, banques,
             entreprises privées, santé et éducation avec des plateformes souveraines et des
             expertises dédiées.
@@ -80,7 +80,7 @@ export default function SectorsSection() {
           whileInView="show"
           viewport={{ once: true, amount: 0.2 }}
           variants={{ hidden: {}, show: { transition: { staggerChildren: 0.08 } } }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8"
         >
           {sectors.map((sector) => (
             <motion.article
@@ -88,23 +88,28 @@ export default function SectorsSection() {
               variants={{ hidden: { opacity: 0, y: 12 }, show: { opacity: 1, y: 0 } }}
               whileHover={{ y: -4, scale: 1.01 }}
               transition={{ type: 'spring', stiffness: 260, damping: 22 }}
-              className="rounded-2xl bg-white shadow-lg border border-slate-100 p-6 flex flex-col gap-4"
+              className="relative overflow-hidden rounded-3xl bg-white/96 shadow-[0_20px_60px_rgba(11,40,66,0.08)] border border-[rgba(115,151,186,0.18)] p-8 flex flex-col gap-5 min-h-[260px] backdrop-blur-sm"
             >
-              <div className="inline-flex items-center gap-2 text-emerald-600 font-semibold">
-                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-emerald-50 border border-emerald-100 text-emerald-600">
-                  {sector.icon}
+              <div className="inline-flex items-center gap-3 text-[var(--msnet-navy)] font-semibold">
+                <span className="flex h-14 w-14 items-center justify-center rounded-xl bg-[var(--msnet-sky)]/16 border border-[var(--msnet-sky)]/35 shadow-inner">
+                  <Image src={sector.icon} alt={sector.title} width={40} height={40} />
                 </span>
-                {sector.title}
+                <span className="text-lg">{sector.title}</span>
               </div>
-              <ul className="space-y-2 text-sm text-slate-700">
+              <ul className="space-y-2.5 text-base leading-relaxed text-[var(--text-main)]">
                 {sector.bullets.map((b) => (
                   <li key={b} className="flex gap-2 items-start">
-                    <span className="mt-1 h-2 w-2 rounded-full bg-emerald-500" />
+                    <span className="mt-2 h-2 w-2 rounded-full bg-[var(--screen-blue)]" />
                     <span>{b}</span>
                   </li>
                 ))}
               </ul>
-              <div className="text-sm font-semibold text-slate-900">Sur devis & modulable</div>
+              <div className="text-sm font-semibold text-[var(--msnet-navy)] flex items-center gap-2 mt-auto">
+                <span className="inline-flex h-2 w-2 rounded-full bg-[var(--elikia-brown)]" /> Sur
+                devis & modulable
+              </div>
+
+              <span className="pointer-events-none absolute inset-x-0 bottom-0 h-1 bg-linear-to-r from-[var(--msnet-sky)] via-[var(--screen-blue)] to-transparent opacity-60" />
             </motion.article>
           ))}
         </motion.div>

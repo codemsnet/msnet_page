@@ -1,12 +1,13 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { FiBook, FiCloud, FiCode, FiHeadphones } from 'react-icons/fi';
+import Image from 'next/image';
+import { FiHeadphones } from 'react-icons/fi';
 import ServiceCard from './ServiceCard';
 
 export default function BenefitsSection() {
   return (
-    <section className="py-16 bg-linear-to-b from-gray-50 to-white">
+    <section className="py-16 bg-linear-to-b from-[var(--msnet-sky)]/10 via-white to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -15,13 +16,13 @@ export default function BenefitsSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-[var(--msnet-navy)] mb-4">
             Votre Expérience,{' '}
-            <span className="text-transparent bg-clip-text bg-linear-to-r from-sky-500 to-orange-500">
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-[var(--msnet-sky)] to-[var(--screen-blue)]">
               Notre Engagement
             </span>
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <p className="text-[var(--text-main)] max-w-2xl mx-auto">
             Nous mettons tout en œuvre pour rendre votre shopping simple, sécurisé et agréable
           </p>
         </motion.div>
@@ -35,22 +36,43 @@ export default function BenefitsSection() {
         >
           <div className="flex gap-6 overflow-x-auto py-4 px-2">
             <ServiceCard
-              icon={<FiCode className="w-5 h-5 text-white" />}
+              icon={
+                <Image
+                  src="/assets/icons/card_icons/code.png"
+                  alt="Web Dev"
+                  width={150}
+                  height={150}
+                />
+              }
               label="Développement Web & Applications"
               subtext="Conception d'applications Web et mobiles, intégrations API et plateformes sur-mesure."
-              circleColor="#0ea5e9"
+              circleColor="rgba(36, 161, 214, 0.12)"
             />
             <ServiceCard
-              icon={<FiCloud className="w-5 h-5 text-white" />}
+              icon={
+                <Image
+                  src="/assets/icons/card_icons/cloud-computing.png"
+                  alt="Cloud"
+                  width={150}
+                  height={150}
+                />
+              }
               label="Cloud & Infrastructures"
               subtext="Cloud souverain, hébergement hybride, sauvegarde et continuité d'activité."
-              circleColor="#7c3aed"
+              circleColor="rgba(36, 161, 214, 0.12)"
             />
             <ServiceCard
-              icon={<FiBook className="w-5 h-5 text-white" />}
+              icon={
+                <Image
+                  src="/assets/icons/card_icons/quality-service.png"
+                  alt="Cloud"
+                  width={150}
+                  height={150}
+                />
+              }
               label="Conseil, Audit & Formation"
               subtext="Gouvernance, audits institutionnels et formations certifiantes pour vos équipes."
-              circleColor="#06b6d4"
+              circleColor="rgba(36, 161, 214, 0.12)"
             />
           </div>
         </motion.div>
@@ -62,8 +84,8 @@ export default function BenefitsSection() {
           transition={{ delay: 0.6 }}
           className="text-center mt-12 pt-8 border-t border-gray-100"
         >
-          <p className="text-gray-700 mb-2">Une question sur nos services ?</p>
-          <button className="inline-flex items-center gap-2 px-6 py-3 bg-gray-900 text-white rounded-xl font-medium hover:bg-gray-800 transition-colors duration-300">
+          <p className="text-[var(--text-main)] mb-2">Une question sur nos services ?</p>
+          <button className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--msnet-navy)] text-white rounded-xl font-semibold border border-[rgba(115,151,186,0.35)] shadow-lg hover:bg-[var(--msnet-navy)]/90 transition-colors duration-300">
             <FiHeadphones className="w-4 h-4" />
             Contacter notre équipe
           </button>

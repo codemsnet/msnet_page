@@ -1,22 +1,38 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
 // Assets in `public/` must be referenced by their public path.
 // Importing from `public/` as modules doesn't work in Next.js.
+import { useEffect, useState } from 'react';
 import { navLinks } from './constants';
 
 const Nav = () => {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 12);
+    onScroll();
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-30 bg-gray-200/20 backdrop-blur-sm">
-      <nav className="container mx-auto px-6 lg:px-12 py-1 flex items-center justify-between">
+    <header
+      className={`fixed top-0 left-0 right-0 z-30 transition-all duration-300 ${
+        scrolled ? 'bg-white/80 shadow-lg backdrop-blur' : 'bg-white/40 backdrop-blur'
+      }`}
+    >
+      <nav className="max-w-7xl mx-auto px-6 lg:px-10 py-3 flex items-center justify-between">
         <Link href="/">
-          <Image src="/assets/images/logo.png" alt="Logo" width={100} height={30} />
+          <Image src="/assets/images/logo.png" alt="Logo" width={120} height={36} />
         </Link>
         <ul className="hidden lg:flex flex-1 justify-center items-center gap-8">
           {navLinks.map((item: { label: string; href: string }) => (
             <li key={item.label}>
               <a
                 href={item.href}
-                className="leading-normal text-lg text-slate-600  hover:text-slate-800"
+                className="leading-normal text-sm font-medium text-(--msnet-navy) hover:text-(--screen-blue) transition-colors text-md"
               >
                 {item.label}
               </a>
