@@ -19,10 +19,10 @@ export default function Home() {
         <div className="mx-auto px-4 lg:px-2">
           <Hero />
           <Catalogue />
-          <SectorsSection />
-          <WhyChooseSection />
-          <TestimonialSection />
           <PartnersSection />
+          <SectorsSection />
+          <TestimonialSection />
+          <WhyChooseSection />
           <TeamSection />
           <ContactSection />
           <section className="py-10" />

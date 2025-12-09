@@ -20,7 +20,7 @@ const Nav = () => {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-30 transition-all duration-300 ${
-        scrolled ? 'bg-white/80 shadow-lg backdrop-blur' : 'bg-white/40 backdrop-blur'
+        scrolled ? 'bg-white/65 shadow-lg backdrop-blur' : 'bg-white/25 backdrop-blur'
       }`}
     >
       <nav className="max-w-7xl mx-auto px-6 lg:px-10 py-3 flex items-center justify-between">
@@ -32,7 +32,7 @@ const Nav = () => {
             <li key={item.label}>
               <a
                 href={item.href}
-                className="leading-normal text-sm font-medium text-(--msnet-navy) hover:text-(--screen-blue) transition-colors text-md"
+                className="leading-normal text-[15px] font-medium text-[var(--msnet-navy)] hover:text-[var(--screen-blue)] transition-colors"
               >
                 {item.label}
               </a>

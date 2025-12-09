@@ -44,7 +44,10 @@ export default function ContactSection() {
   };
 
   return (
-    <section className="py-20 bg-linear-to-b from-[var(--msnet-sky)]/12 via-white to-white">
+    <section
+      id="contact"
+      className="py-20 bg-linear-to-b from-[var(--msnet-sky)]/12 via-white to-white"
+    >
       <div className="max-w-6xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-12">
           <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--msnet-sky)]/15 text-[var(--msnet-navy)] text-sm font-semibold border border-[var(--msnet-sky)]/25">

@@ -7,7 +7,10 @@ import ServiceCard from './ServiceCard';
 
 export default function BenefitsSection() {
   return (
-    <section className="py-16 bg-linear-to-b from-[var(--msnet-sky)]/10 via-white to-white">
+    <section
+      id="catalogue"
+      className="py-16 bg-linear-to-b from-[var(--msnet-sky)]/10 via-white to-white"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
