@@ -66,7 +66,7 @@ export default function TestimonialSection() {
             hidden: {},
             show: { transition: { staggerChildren: 0.08 } },
           }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8"
+          className="grid grid-cols-1 max-sm:gap-12 md:grid-cols-3 gap-8"
         >
           {testimonials.map((t, idx) => (
             <motion.div
