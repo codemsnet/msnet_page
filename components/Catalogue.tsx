@@ -37,7 +37,7 @@ export default function BenefitsSection() {
           transition={{ delay: 0.2 }}
           className="mt-10"
         >
-          <div className="flex gap-6 overflow-x-auto py-4 px-2">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 sm:gap-6 md:gap-8">
             <ServiceCard
               icon={
                 <Image
