@@ -11,7 +11,7 @@ import WhyChooseSection from '@/components/WhyChooseSection';
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-neutral-900 font-sans text-gray-900 dark:text-gray-100">
+    <div className="min-h-screen bg-gray-50 font-sans text-gray-900">
       {/* Nav is fixed (handles its own positioning) */}
       <Nav />
 
@@ -19,10 +19,10 @@ export default function Home() {
         <div className="mx-auto px-4 lg:px-2">
           <Hero />
           <Catalogue />
-          <SectorsSection />
-          <WhyChooseSection />
-          <TestimonialSection />
           <PartnersSection />
+          <SectorsSection />
+          <TestimonialSection />
+          <WhyChooseSection />
           <TeamSection />
           <ContactSection />
           <section className="py-10" />

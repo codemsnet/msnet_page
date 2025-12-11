@@ -36,7 +36,10 @@ export default function TestimonialSection() {
   ];
 
   return (
-    <section className="py-20 bg-linear-to-b from-[var(--msnet-sky)]/12 via-white to-white">
+    <section
+      id="testimonials"
+      className="py-20 bg-linear-to-b from-[var(--msnet-sky)]/12 via-white to-white"
+    >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <motion.header
           initial={{ opacity: 0, y: -8 }}
@@ -63,7 +66,7 @@ export default function TestimonialSection() {
             hidden: {},
             show: { transition: { staggerChildren: 0.08 } },
           }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8"
+          className="grid grid-cols-1 max-sm:gap-12 md:grid-cols-3 gap-8"
         >
           {testimonials.map((t, idx) => (
             <motion.div

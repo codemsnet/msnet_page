@@ -59,7 +59,7 @@ const Hero = () => {
       id="home"
       className="w-full py-24 bg-linear-to-b from-[var(--msnet-sky)]/10 via-white to-white"
     >
-      <div className="max-w-7xl mx-auto px-4 lg:px-2 flex flex-col lg:flex-row items-center gap-12">
+      <div className="max-w-7xl mx-auto px-4 lg:px-2 flex flex-col lg:flex-row items-center gap-10 sm:gap-12">
         {/* Left column: content */}
         <div className="lg:w-2/5 space-y-6">
           <p className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-[var(--msnet-navy)] bg-white px-3 py-1 rounded-full shadow-sm border border-slate-100">
@@ -126,21 +126,21 @@ const Hero = () => {
         </div>
 
         {/* Right column: large visual, overlapped */}
-        <div className="lg:w-3/5 relative flex items-center justify-center">
+        <div className="lg:w-3/5 relative flex items-center justify-center max-sm:px-1">
           <div
-            className={`absolute -left-8 -top-8 w-[550px] h-[515px] rounded-3xl bg-white/40 dark:bg-neutral-900/70 shadow-2xl border border-[var(--msnet-sky)]/30 ${
+            className={`absolute -left-8 max-sm:h-full max-sm:pb-20 -top-8 md:w-[550px] md:h-[515px] rounded-3xl bg-white/40 shadow-2xl border border-[var(--msnet-sky)]/30 ${
               mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
             } transition-all duration-700`}
           />
 
-          <div className="relative z-10 w-[740px] h-[520px] -translate-y-6 lg:-translate-y-12 flex items-center justify-center">
+          <div className="relative z-10 max-md:w-full w-[740px] md:h-[520px] max-sm:h-full max-sm:pb-10 -translate-y-4 sm:-translate-y-6 lg:-translate-y-12 flex items-center justify-center px-1 sm:px-2">
             <div
-              className={`w-full h-full rounded-3xl overflow-hidden bg-white shadow-2xl border border-[var(--msnet-sky)]/30 flex items-center ${
+              className={`w-full max-sm:flex-col h-full rounded-3xl overflow-hidden bg-white shadow-2xl border border-[var(--msnet-sky)]/30 flex md:items-center max-sm:p-3 sm:p-4 ${
                 isTransitioning ? 'opacity-80 scale-40' : 'opacity-100 scale-100'
               } transition-all duration-200`}
             >
               {/* Image area */}
-              <div className="w-1/2 flex items-center justify-center p-4 bg-white">
+              <div className="md:w-1/2 flex md:items-center md:justify-center md:p-4 bg-white max-sm:w-full max-sm:p-3">
                 <div className="w-full h-full flex items-center justify-center">
                   <Image
                     src={selected.img}
@@ -153,7 +153,7 @@ const Hero = () => {
               </div>
 
               {/* Info area - fixed size so card never changes */}
-              <div className="w-1/2 p-7 flex flex-col justify-center gap-5 bg-transparent">
+              <div className="md:w-1/2 p-6 md:p-7 flex flex-col md:justify-center gap-5 max-sm:gap-3 bg-transparent max-sm:p-4 max-sm:pt-6">
                 <h3 className="text-3xl font-semibold text-[var(--msnet-navy)]">{selected.name}</h3>
                 <p className="mt-1 text-lg text-[var(--text-main)] grow overflow-hidden leading-relaxed">
                   {selected.short}
@@ -171,7 +171,7 @@ const Hero = () => {
           </div>
 
           {/* Thumbnails mapped (entities) - slightly overlapping the big image */}
-          <div className="absolute -bottom-5 left-1/2 transform -translate-x-1/2 flex items-center gap-4 z-20">
+          <div className="absolute -bottom-7 sm:-bottom-5 left-1/2 transform -translate-x-1/2 flex items-center gap-3 sm:gap-4 z-20">
             {entities.map((e) => (
               <button
                 key={e.id}

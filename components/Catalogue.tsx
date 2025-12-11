@@ -7,7 +7,10 @@ import ServiceCard from './ServiceCard';
 
 export default function BenefitsSection() {
   return (
-    <section className="py-16 bg-linear-to-b from-[var(--msnet-sky)]/10 via-white to-white">
+    <section
+      id="catalogue"
+      className="py-16 bg-linear-to-b from-[var(--msnet-sky)]/10 via-white to-white"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -34,7 +37,7 @@ export default function BenefitsSection() {
           transition={{ delay: 0.2 }}
           className="mt-10"
         >
-          <div className="flex gap-6 overflow-x-auto py-4 px-2">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 sm:gap-6 md:gap-8">
             <ServiceCard
               icon={
                 <Image

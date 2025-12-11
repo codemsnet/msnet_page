@@ -53,7 +53,10 @@ const sectors = [
 
 export default function SectorsSection() {
   return (
-    <section className="py-20 bg-linear-to-b from-[var(--msnet-sky)]/12 via-white to-white">
+    <section
+      id="sectors"
+      className="py-20 bg-linear-to-b from-[var(--msnet-sky)]/12 via-white to-white"
+    >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: -8 }}

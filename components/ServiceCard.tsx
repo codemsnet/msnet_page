@@ -19,7 +19,7 @@ const ServiceCard: React.FC<Props> = ({
   circleColor = 'rgba(36, 161, 214, 0.12)',
 }) => {
   return (
-    <div className="flex-1 sm:w-[350px] sm:min-w-[350px] w-full rounded-[20px] shadow-2xl px-10 py-16 bg-white/95 border border-[rgba(115,151,186,0.18)] backdrop-blur-sm">
+    <div className="w-full rounded-[20px] shadow-2xl px-6 sm:px-8 md:px-10 py-10 sm:py-12 md:py-16 bg-white/95 border border-[rgba(115,151,186,0.18)] backdrop-blur-sm">
       <div
         className="w-15 h-15 flex justify-center items-center rounded-full"
         style={{ backgroundColor: circleColor }}
@@ -31,11 +31,11 @@ const ServiceCard: React.FC<Props> = ({
         ) : null}
       </div>
 
-      <h3 className="mt-5 font-palanquin text-3xl leading-normal font-bold text-[var(--msnet-navy)]">
+      <h3 className="mt-5 font-palanquin text-2xl sm:text-3xl leading-normal font-bold text-[var(--msnet-navy)]">
         {label}
       </h3>
 
-      <p className="mt-3 break-words font-montserrat text-lg leading-normal text-[var(--text-main)]">
+      <p className="mt-3 break-words font-montserrat text-base sm:text-lg leading-relaxed text-[var(--text-main)]">
         {subtext}
       </p>
     </div>

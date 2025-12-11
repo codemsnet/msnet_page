@@ -14,8 +14,8 @@ const logos = [
 
 export default function PartnersSection() {
   return (
-    <section className="py-20 bg-linear-to-b from-[var(--msnet-sky)]/12 via-white to-white">
-      <div className="w-full mx-auto px-6 lg:px-8">
+    <section className="py-16 sm:py-20 bg-linear-to-b from-[var(--msnet-sky)]/12 via-white to-white">
+      <div className="w-full mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: -10 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -36,9 +36,9 @@ export default function PartnersSection() {
           </p>
         </motion.div>
 
-        <div className="relative mt-10 overflow-hidden rounded-4xl bg-white/95 backdrop-blur border border-[rgba(115,151,186,0.18)] shadow-[0_24px_70px_rgba(11,40,66,0.09)]">
-          <div className="pointer-events-none absolute left-0 top-0 h-full w-32 bg-gradient-to-r from-white to-transparent z-10" />
-          <div className="pointer-events-none absolute right-0 top-0 h-full w-32 bg-gradient-to-l from-white to-transparent z-10" />
+        <div className="relative mt-10 overflow-hidden rounded-3xl sm:rounded-4xl bg-white/95 backdrop-blur border border-[rgba(115,151,186,0.18)] shadow-[0_24px_70px_rgba(11,40,66,0.09)]">
+          <div className="pointer-events-none absolute left-0 top-0 h-full w-16 sm:w-24 bg-gradient-to-r from-white to-transparent z-10" />
+          <div className="pointer-events-none absolute right-0 top-0 h-full w-16 sm:w-24 bg-gradient-to-l from-white to-transparent z-10" />
 
           <motion.div
             initial={{ opacity: 0, y: 6 }}
@@ -48,11 +48,11 @@ export default function PartnersSection() {
             className="flex"
           >
             <div className="flex items-center">
-              <div className="flex gap-24 py-12 marquee-track">
+              <div className="flex gap-12 sm:gap-20 lg:gap-24 py-8 sm:py-12 marquee-track px-4 sm:px-6">
                 {[...logos, ...logos].map((logo, idx) => (
                   <div
                     key={`first-${logo.name}-${idx}`}
-                    className="shrink-0 flex items-center justify-center h-28 w-52 sm:w-64"
+                    className="shrink-0 flex items-center justify-center h-24 sm:h-28 w-44 sm:w-56 lg:w-64"
                   >
                     <Image
                       src={logo.src}
@@ -83,18 +83,18 @@ export default function PartnersSection() {
                       onMouseLeave={() => {
                         document.querySelectorAll('.partner-tooltip').forEach((el) => el.remove());
                       }}
-                      className="max-h-24 w-auto object-contain drop-shadow-md"
+                      className="max-h-20 sm:max-h-24 w-auto object-contain drop-shadow-md"
                       priority={idx < logos.length}
                     />
                   </div>
                 ))}
               </div>
 
-              <div className="flex gap-24 py-12 marquee-track marquee-track--alt">
+              <div className="flex gap-12 sm:gap-20 lg:gap-24 py-8 sm:py-12 marquee-track marquee-track--alt px-4 sm:px-6">
                 {[...logos, ...logos].map((logo, idx) => (
                   <div
                     key={`second-${logo.name}-${idx}`}
-                    className="shrink-0 flex items-center justify-center h-28 w-52 sm:w-64"
+                    className="shrink-0 flex items-center justify-center h-24 sm:h-28 w-44 sm:w-56 lg:w-64"
                   >
                     <Image
                       src={logo.src}
@@ -125,7 +125,7 @@ export default function PartnersSection() {
                       onMouseLeave={() => {
                         document.querySelectorAll('.partner-tooltip').forEach((el) => el.remove());
                       }}
-                      className="max-h-24 w-auto object-contain drop-shadow-md"
+                      className="max-h-20 sm:max-h-24 w-auto object-contain drop-shadow-md"
                     />
                   </div>
                 ))}
