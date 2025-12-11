@@ -24,6 +24,12 @@ export default function ContactSection() {
     setError('');
 
     try {
+      const composedMessage = `Nom : ${payload.name}\nEmail : ${payload.email}\nTéléphone : ${
+        payload.phone
+      }\nOrganisation : ${payload.org || '-'}\nCanal : ${payload.channel}\nSujet : ${
+        payload.subject
+      }\n\n${payload.message}`;
+
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
