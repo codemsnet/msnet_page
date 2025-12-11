@@ -30,7 +30,7 @@ export default function ContactSection() {
         payload.subject
       }\n\n${payload.message}`;
 
-      const mailto = `mailto:sekoudayifourouk@gmail.com?subject=${encodeURIComponent(
+      const mailto = `mailto:contact@msnet.ml?subject=${encodeURIComponent(
         'Nouveau Message',
       )}&body=${encodeURIComponent(composedMessage)}`;
 
