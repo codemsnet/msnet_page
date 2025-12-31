@@ -30,22 +30,17 @@ export default function ContactSection() {
         payload.subject
       }\n\n${payload.message}`;
 
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
-      });
+      const mailto = `mailto:contact@msnet.ml?subject=${encodeURIComponent(
+        'Nouveau Message',
+      )}&body=${encodeURIComponent(composedMessage)}`;
 
-      if (!res.ok) {
-        const data = await res.json().catch(() => ({}));
-        throw new Error(data?.error || 'Une erreur est survenue.');
-      }
+      window.location.href = mailto;
 
       setStatus('success');
       form.reset();
     } catch (err) {
       setStatus('error');
-      setError(err instanceof Error ? err.message : 'Impossible d’envoyer le message.');
+      setError(err instanceof Error ? err.message : 'Impossible d’ouvrir votre client mail.');
     }
   };
 
