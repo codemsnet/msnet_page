@@ -16,8 +16,7 @@ export default function TestimonialSection() {
       rating: 4.5,
     },
     {
-      avatar:
-        'https://static.vecteezy.com/system/resources/thumbnails/039/370/688/small_2x/ai-generated-young-beautiful-woman-sitting-on-a-chair-in-her-office-female-ceo-on-brown-suit-smiling-portrait-view-free-photo.jpg',
+      avatar: '/assets/images/faces/image.png',
       quote:
         'La solution déployée a transformé notre manière de travailler. Excellente gouvernance projet et formation adaptée.',
       name: 'Aïssata T.',

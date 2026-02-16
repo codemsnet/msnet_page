@@ -14,8 +14,7 @@ const team: {
     name: 'Fatoumata Keïta',
     role: 'CEO & Strategy',
     bio: 'Vision, partenariats et transformation pour nos clients publics et privés.',
-    photo:
-      'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=400&q=80',
+    photo: '/assets/images/faces/gettyimages-686389490-612x612.jpg',
     socials: [
       { platform: 'linkedin', url: 'https://linkedin.com' },
       { platform: 'instagram', url: 'https://instagram.com' },
@@ -25,8 +24,7 @@ const team: {
     name: 'Mamadou Traoré',
     role: 'CTO & Cloud',
     bio: 'Architecture, sécurité et delivery de plateformes critiques.',
-    photo:
-      'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=400&q=80',
+    photo: '/assets/images/faces/gettyimages-1673644196-612x612.jpg',
     socials: [
       { platform: 'linkedin', url: 'https://linkedin.com' },
       { platform: 'facebook', url: 'https://facebook.com' },
@@ -36,8 +34,7 @@ const team: {
     name: 'Aïssata Diallo',
     role: 'Design & Produit',
     bio: 'Expériences utilisateur premium, branding et storytelling produit.',
-    photo:
-      'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80',
+    photo: '/assets/images/faces/gettyimages-1194465573-612x612.jpg',
     socials: [
       { platform: 'linkedin', url: 'https://linkedin.com' },
       { platform: 'instagram', url: 'https://instagram.com' },
