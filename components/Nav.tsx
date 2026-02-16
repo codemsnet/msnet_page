@@ -31,7 +31,7 @@ const Nav = () => {
         scrolled ? 'bg-white/65 shadow-lg backdrop-blur' : 'bg-white/25 backdrop-blur'
       }`}
     >
-      <nav className="max-w-7xl mx-auto px-6 lg:px-10 py-3 flex items-center justify-between">
+      <nav className="max-w-7xl mx-auto px-6 lg:px-10 py-1 flex items-center justify-between">
         <Link href="/">
           <Image src="/assets/images/logo.png" alt="Logo" width={120} height={36} />
         </Link>
